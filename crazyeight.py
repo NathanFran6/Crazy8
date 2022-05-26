@@ -1,12 +1,24 @@
+import random as r
+
 class Card:
     def __init__(self, value, suit):
         self.value = value
         self.suit= suit
+ 
+suits = ['Clubs', 'Spades', 'Hearts', 'Diamonds']
+
+deck = []
+
+for val in range(1,14):
+    for su in suits:
+        x=Card(val, su)
+        deck.append(vars(x))
+
+hand= []
+for i in range(1,3):
+    hand.append(r.sample(deck, 8))
+
+print(hand)
 
 
-cards={
-    'spades':[2,3,4,5,6,7,8,9,10, 'Jack', 'Queen', 'King']
-    'clubs':[2,3,4,5,6,7,8,9,10, 'Jack', 'Queen', 'King']
-    'hearts':[2,3,4,5,6,7,8,9,10, 'Jack', 'Queen', 'King']
-    'diamonds':[2,3,4,5,6,7,8,9,10, 'Jack', 'Queen', 'King']
-    }
+        
